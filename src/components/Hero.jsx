@@ -16,7 +16,7 @@ function Hero() {
     setIsVisible(true);
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 3000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 

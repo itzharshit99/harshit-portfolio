@@ -8,6 +8,7 @@
 body {
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
+  background: #1a1a1a; /* Match About/Hero dark background */
 }
 
 /* Navbar Styles */
@@ -16,7 +17,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(26, 26, 26, 0.9); /* Dark semi-transparent background */
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 1000;
@@ -25,8 +26,8 @@ body {
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  background: rgba(26, 26, 26, 0.95); /* Slightly darker when scrolled */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(24px);
 }
 
@@ -55,14 +56,16 @@ body {
 
 .logo-icon {
   font-size: 2rem;
-  filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.3));
+  filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.5)); /* Green glow to match About/Hero */
+  color: #00ff88; /* Accent color from About/Hero */
 }
 
 .logo-text {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #ffffff; /* White text for dark theme */
   letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Navigation Menu */
@@ -80,7 +83,7 @@ body {
 .navbar-link {
   display: inline-block;
   padding: 0.75rem 1.25rem;
-  color: #374151;
+  color: #e0e0e0; /* Light gray for contrast */
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
@@ -98,14 +101,14 @@ body {
   left: 0;
   width: 0;
   height: 100%;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #667eea, #764ba2); /* Match Hero/About gradients */
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
   border-radius: 12px;
 }
 
 .navbar-link:hover {
-  color: white;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -119,19 +122,19 @@ body {
 
 /* CTA Button (Contact) */
 .navbar-link-cta {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: white;
+  background: linear-gradient(135deg, #667eea, #764ba2); /* Match Hero/About gradients */
+  color: #ffffff;
   font-weight: 600;
-  box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 14px 0 rgba(102, 126, 234, 0.3);
   border: none;
 }
 
 .navbar-link-cta::before {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  background: linear-gradient(135deg, #5a67d8, #6b46c1); /* Darker gradient on hover */
 }
 
 .navbar-link-cta:hover {
-  box-shadow: 0 6px 20px 0 rgba(99, 102, 241, 0.4);
+  box-shadow: 0 6px 20px 0 rgba(102, 126, 234, 0.4);
   transform: translateY(-3px);
 }
 
@@ -149,7 +152,7 @@ body {
   display: block;
   height: 3px;
   width: 100%;
-  background: #374151;
+  background: #e0e0e0; /* Light gray for dark theme */
   border-radius: 3px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: absolute;
@@ -199,7 +202,7 @@ body {
     left: -100%;
     width: 100%;
     height: calc(100vh - 70px);
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(26, 26, 26, 0.98); /* Dark mobile menu */
     backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: flex-start;
@@ -225,23 +228,26 @@ body {
     padding: 1rem;
     font-size: 1.1rem;
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(99, 102, 241, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Subtle white overlay for contrast */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
   }
 
   .navbar-link-cta {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #ffffff;
     border: none;
     margin-top: 1rem;
   }
 
   .logo-text {
     font-size: 1.3rem;
+    color: #ffffff;
   }
 
   .logo-icon {
     font-size: 1.6rem;
+    color: #00ff88;
   }
 }
 
@@ -271,15 +277,15 @@ body {
   }
 }
 
-/* Active link state (add this class via JavaScript when on section) */
+/* Active link state */
 .navbar-link.active {
-  background: rgba(99, 102, 241, 0.1);
-  color: #6366f1;
+  background: rgba(102, 126, 234, 0.2); /* Subtle gradient overlay */
+  color: #ffffff;
 }
 
 .navbar-link.active::before {
   width: 100%;
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(102, 126, 234, 0.2);
 }
 
 /* Animations */
