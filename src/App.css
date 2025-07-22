@@ -11,78 +11,9 @@ body {
   color: #ffffff;
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background-color: #111;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
 
-.nav-links li {
-  cursor: pointer;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #00ff88;
-}
-
-/* Hero Section */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
-}
-
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 24px;
-  margin-bottom: 30px;
-}
-
-.cta-button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #00ff88;
-  border: none;
-  color: #111;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-  background-color: #00cc70;
-}
 
 /* About Section */
 .about {
