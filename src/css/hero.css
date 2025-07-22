@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #1a1a1a; /* Match Navbar/About dark background */
+  background: #1a1a1a;
 }
 
 /* Background Effects */
@@ -31,7 +31,7 @@
 .orb-1 {
   width: 300px;
   height: 300px;
-  background: linear-gradient(135deg, #667eea, #764ba2); /* Match Navbar/About gradients */
+  background: linear-gradient(135deg, #667eea, #764ba2);
   top: 10%;
   right: 10%;
   animation-delay: 0s;
@@ -40,7 +40,7 @@
 .orb-2 {
   width: 200px;
   height: 200px;
-  background: linear-gradient(135deg, #00ff88, #44a08d); /* Green accent to match Navbar */
+  background: linear-gradient(135deg, #00ff88, #44a08d);
   bottom: 20%;
   left: 10%;
   animation-delay: 2s;
@@ -49,7 +49,7 @@
 .orb-3 {
   width: 150px;
   height: 150px;
-  background: linear-gradient(135deg, #a8edea, #00ff88); /* Subtle green for consistency */
+  background: linear-gradient(135deg, #a8edea, #00ff88);
   top: 50%;
   left: 50%;
   animation-delay: 4s;
@@ -90,7 +90,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.1); /* Match Navbar/About blur */
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50px;
@@ -118,7 +118,7 @@
 }
 
 .highlight-name {
-  background: linear-gradient(135deg, #00ff88, #44a08d); /* Green gradient to match Navbar/About */
+  background: linear-gradient(135deg, #00ff88, #44a08d);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -147,7 +147,7 @@
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: #e0e0e0; /* Match Navbar/About text color */
+  color: #e0e0e0;
   margin-bottom: 1.5rem;
   animation: slideInLeft 0.8s ease-out 0.6s both;
   font-weight: 500;
@@ -160,11 +160,11 @@
 
 .dynamic-role {
   font-weight: 700;
-  background: linear-gradient(135deg, #667eea, #764ba2); /* Match Navbar/About gradients */
+  background: linear-gradient(135deg, #667eea, #764ba2);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-bottom: 3px solid #00ff88; /* Green accent */
+  border-bottom: 3px solid #00ff88;
   padding-bottom: 2px;
   transition: all 0.5s ease;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
@@ -172,7 +172,7 @@
 
 .hero-description {
   font-size: 1.1rem;
-  color: #e0e0e0; /* Match Navbar/About */
+  color: #e0e0e0;
   line-height: 1.6;
   margin-bottom: 2.5rem;
   animation: slideInLeft 0.8s ease-out 0.8s both;
@@ -192,7 +192,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #667eea, #764ba2); /* Match Navbar/About */
+  background: linear-gradient(135deg, #667eea, #764ba2);
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
@@ -207,7 +207,7 @@
 .cta-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 40px rgba(102, 126, 234, 0.4);
-  background: linear-gradient(135deg, #5a67d8, #6b46c1); /* Darker gradient */
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
 }
 
 .cta-icon {
@@ -217,17 +217,30 @@
 }
 
 .cta-primary:hover .cta-icon {
-  transform: rotate(していました
+  transform: rotate(45deg); /* FIXED THIS LINE */
+}
 
-System: * Today's date and time is 10:23 PM IST on Tuesday, July 22, 2025.
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
 
-The user has requested to update the `hero.css` file to match the dark theme of the `navbar.css` and `about.css` in their portfolio website. The provided `hero.css` has a gradient background (`#667eea` to `#764ba2`) and various gradient orbs, which contrasts with the dark theme (`#1a1a1a`) used in `navbar.css` and `about.css`. The updated `hero.css` has been modified to use a `#1a1a1a` background, align gradients (`#667eea` to `#764ba2`, `#00ff88` accents), and maintain consistency with text colors (`#ffffff`, `#e0e0e0`) and blur effects (`backdrop-filter`) from the Navbar and About sections. The `Hero.jsx` structure remains unchanged, as it already aligns well with the desired functionality (dynamic roles, stats, avatar, tech cards).
+.cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
 
-The response was cut off mid-sentence (`transform: rotate(`), likely due to a character limit or input issue. Below, I’ll complete the `hero.css` file, ensuring all sections are updated for the dark theme, and provide integration instructions.
+/* baaki code aapka already sahi hai (hero-stats, hero-visual, floating-cards, scroll-indicator, animations, responsive) */
 
-### Completed `hero.css` (Dark Theme)
-```css
-/* Hero Section */
 .hero {
   position: relative;
   min-height: 100vh;
