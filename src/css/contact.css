@@ -1,86 +1,71 @@
-/* Root Variables for Consistency */
-:root {
-  --primary-bg: #1a1a1a;
-  --text-primary: #ffffff;
-  --text-secondary: #e0e0e0;
-  --accent-green: #00ff88;
-  --gradient-primary: linear-gradient(135deg, #667eea, #764ba2);
-  --gradient-hover: linear-gradient(135deg, #5a67d8, #6b46c1);
-  --gradient-green: linear-gradient(135deg, #00ff88, #44a08d);
-  --blur-bg: rgba(255, 255, 255, 0.1);
-  --blur-border: rgba(255, 255, 255, 0.2);
-  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.3);
-  --shadow-3d: 0 20px 40px rgba(0, 255, 136, 0.1);
-  --font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --perspective: 1000px;
-}
-
 /* Contact Section */
 .contact {
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  overflow: hidden;
-  background: var(--primary-bg);
-  padding: 4rem 2rem;
+  background: #1a1a1a;
+  padding: 4rem 0;
 }
 
-/* Background Effects */
+/* Subtle Background */
 .contact-background {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 0;
 }
 
-.gradient-orb {
+.contact-background .gradient-orb {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.3;
+  opacity: 0.15;
   animation: float 8s ease-in-out infinite;
 }
 
-.orb-1 {
-  width: 250px;
-  height: 250px;
-  background: var(--gradient-primary);
-  top: 10%;
-  left: 10%;
+.contact-background .orb-1 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  top: 20%;
+  right: 15%;
 }
 
-.orb-2 {
+.contact-background .orb-2 {
   width: 200px;
   height: 200px;
-  background: var(--gradient-green);
-  bottom: 15%;
-  right: 10%;
-  animation-delay: 2s;
+  background: linear-gradient(135deg, #00ff88, #44a08d);
+  bottom: 30%;
+  left: 15%;
+  animation-delay: 4s;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
 }
 
-/* Contact Container */
+/* Container */
 .contact-container {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  max-width: 600px;
   margin: 0 auto;
+  padding: 0 2rem;
   width: 100%;
 }
 
-/* Contact Content */
+/* Content */
 .contact-content {
   opacity: 0;
-  transform: translateY(50px);
-  transition: var(--transition);
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+  text-align: center;
 }
 
 .contact-content.visible {
@@ -88,147 +73,151 @@
   transform: translateY(0);
 }
 
+/* Badge */
 .contact-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--blur-bg);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid var(--blur-border);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50px;
   padding: 0.5rem 1rem;
-  font: 0.9rem/1.6 var(--font-family);
-  color: var(--text-primary);
-  font-weight: 600;
-  margin-bottom: 2rem;
-  animation: slideInDown 0.8s ease-out 0.2s both;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
 }
 
+.badge-icon {
+  font-size: 1rem;
+}
+
+/* Title */
 .contact-title {
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--text-primary);
-  text-align: center;
-  margin-bottom: 2rem;
-  animation: slideInLeft 0.8s ease-out 0.4s both;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  position: relative;
 }
 
-/* Contact Card (3D Style) */
+.contact-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(135deg, #00ff88, #44a08d);
+  border-radius: 2px;
+}
+
+/* Card */
 .contact-card {
-  position: relative;
-  perspective: var(--perspective);
-  width: 100%;
-  max-width: 500px; /* Centered card width */
-  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.card-body {
-  background: var(--blur-bg);
-  backdrop-filter: blur(15px);
-  border: 1px solid var(--blur-border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  transform-style: preserve-3d;
-  transition: var(--transition);
-  animation: slideInUp 0.8s ease-out 0.6s both;
-}
-
-.contact-card:hover .card-body {
-  transform: translateZ(20px) rotateX(5deg) rotateY(5deg);
-  box-shadow: var(--shadow-3d), var(--shadow-lg);
-  background: rgba(255, 255, 255, 0.15);
-}
-
+/* Form Elements */
 .card-item {
-  position: relative;
-  transform-style: preserve-3d;
-  margin-bottom: 1rem;
-}
-
-.translate-z-50 {
-  transform: translateZ(50px);
-}
-
-.translate-z-60 {
-  transform: translateZ(60px);
-}
-
-.translate-z-70 {
-  transform: translateZ(70px);
-}
-
-.translate-z-80 {
-  transform: translateZ(80px);
-}
-
-.translate-z-90 {
-  transform: translateZ(90px);
+  margin-bottom: 1.5rem;
 }
 
 label {
   display: block;
   font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.3rem;
   font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-align: left;
 }
 
 input,
 textarea {
   width: 100%;
-  padding: 0.7rem;
+  padding: 1rem;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--blur-border);
-  border-radius: 8px;
-  color: var(--text-primary);
-  font: 0.9rem/1.5 var(--font-family);
-  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 input:focus,
 textarea:focus {
-  outline: none;
-  border-color: var(--accent-green);
-  box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.2);
+  border-color: rgba(0, 255, 136, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
 }
 
 textarea {
-  min-height: 100px;
+  min-height: 120px;
   resize: vertical;
 }
 
+/* Submit Button */
 .submit-button {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.7rem 1.5rem;
-  background: var(--gradient-primary);
-  color: var(--text-primary);
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #ffffff;
   border: none;
-  border-radius: 50px;
-  font-size: 0.9rem;
+  border-radius: 12px;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  margin-top: 1rem;
 }
 
 .submit-button:hover {
-  transform: translateZ(10px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-  background: var(--gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
 }
 
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* Success Message */
 .success-message {
+  background: linear-gradient(135deg, #00ff88, #44a08d);
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
   text-align: center;
-  color: var(--accent-green);
-  font-size: 1rem;
+  font-weight: 500;
   margin-top: 1rem;
-  animation: fadeInUp 0.8s ease-out;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Scroll Indicator */
-.scroll-indicator {
+.contact .scroll-indicator {
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -237,99 +226,84 @@ textarea {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  color: var(--text-primary);
-  animation: fadeInUp 0.8s ease-out 2s both;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  z-index: 10;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.scroll-dot {
+.contact .scroll-indicator:hover {
+  color: #ffffff;
+  transform: translateX(-50%) translateY(-3px);
+}
+
+.contact .scroll-dot {
   width: 2px;
   height: 30px;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.7));
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 2px;
   position: relative;
   overflow: hidden;
 }
 
-.scroll-dot::before {
+.contact .scroll-dot::before {
   content: '';
   position: absolute;
-  inset: 0;
-  top: -100%;
-  background: var(--accent-green);
-  animation: scrollDot 2s ease-in-out infinite;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00ff88;
+  animation: scrollUp 2s ease-in-out infinite;
 }
 
-@keyframes scrollDot {
-  0% { top: -100%; }
-  50%, 100% { top: 100%; }
+@keyframes scrollUp {
+  0% { bottom: -100%; }
+  50%, 100% { bottom: 100%; }
 }
 
-.scroll-text {
+.contact .scroll-text {
   font-size: 0.8rem;
-  letter-spacing: 0.5px;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
 }
 
-/* Reused Animations */
-@keyframes slideInDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes slideInUp {
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   .contact {
-    padding: 2rem 1rem;
+    padding: 2rem 0;
   }
-
+  
+  .contact-container {
+    padding: 0 1rem;
+  }
+  
   .contact-title {
     font-size: 2rem;
   }
-
-  .card-body {
-    padding: 1rem;
+  
+  .contact-card {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
   }
-
+  
   input,
-  textarea {
-    font-size: 0.85rem;
-  }
-
+  textarea,
   .submit-button {
-    width: 100%;
-    text-align: center;
+    border-radius: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .contact-title {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
   }
-
-  input,
-  textarea {
-    font-size: 0.8rem;
-    padding: 0.6rem;
+  
+  .contact-card {
+    padding: 1.5rem 1rem;
   }
-
-  .submit-button {
-    padding: 0.6rem 1.2rem;
+  
+  .card-item {
+    margin-bottom: 1.25rem;
   }
 }

@@ -15,13 +15,13 @@ function About() {
 
   const experiences = [
     {
-      title: 'Web Developer',
-      duration: '2023 - Present',
+      title: 'Software Developer Intern @mediaAMP',
+      duration: 'May-2025 to July-2025 ',
       description: 'Building responsive web applications using React and modern frameworks.',
     },
     {
-      title: 'UI/UX Designer',
-      duration: '2022 - 2023',
+      title: 'Full Stack Developer Intern @EngineerCore',
+      duration: 'May-2024 to June-2024',
       description: 'Designed user-friendly interfaces for web and mobile apps.',
     },
   ];
